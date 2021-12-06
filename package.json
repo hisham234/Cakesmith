@@ -3,7 +3,7 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-async-handler": "^1.1.4",
+    "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mailgun-js": "^0.6.7",
     "mongoose": "^5.13.3",
@@ -27,9 +27,5 @@
     "eslint": "^7.27.0",
     "eslint-plugin-react": "^7.23.2",
     "nodemon": "^2.0.7"
-  },
-  "engines": {
-    "node": "12.4.0",
-    "npm": "6.9.0"
   }
 }
