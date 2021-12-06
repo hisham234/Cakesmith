@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+.LoginBody{
+    position: relative;
+    display: table;
+    height: auto;
+    min-height: 85%;
+    padding-top: 20px;
+    display: grid;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    padding-top: 90px;
+    margin-top: 1rem;
+    padding-bottom: 80px;
+}
+.Loginwrap {
+    filter: blur(0px);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    width: 30%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bg-image-Login{
+    position:absolute; top:0px; right:0px; bottom:0px; left:0px;
+    background-image: url(../images/cupcake-day.jpg);
+    background-size: cover;
+    background-position: center center;
+    filter: blur(8px);
+ }
+
+.LoginForm {
+    padding: 40px 15% 30px 15%;
+    margin-left: -17%;
+  }
+  
+  .LoginForm:nth-child(1){
+    flex: 30%;
+
+  }
+  
+  .LoginForm:nth-child(2){
+    flex: 45%;
+  }
+  
+  .LoginForm:nth-child(3){
+    flex: 25%;
+    padding: 0;
+  }
+  
+  .LoginForm h1{
+   text-align:center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .LoginForm button{
+        line-height: 10px;
+        height: 11%;
+        color: #fff;
+        font-size: 15px;
+        background: red;
+        cursor: pointer;
+        width: 40%;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        margin-bottom: 10%;
+        margin-left: 32%;
+  }
+
+  .makeAcc a{
+      color: #f04506;
+  }
+
+  .makeAcc a:hover{
+      color:#eebf00 ;
+  }
+  
+  .botline{
+text-align: center; 
+ }
+  
+
+
+.avatar {
+    align-items: center;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-80px/2);
+	left: 42%;
+}
+
+
+
+
+
+
+
+
+
+  
+  .detailImg{
+      padding-right: 20px;
+
+  }
+  .detailDiv{
+      margin-top: 20px;
+  }
+  .MainDetailDiv{
+      margin-top: 15%;
+  }
+
+  
+  .LoginForm input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 12px 20px;
+    background: transparent;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  input, select {
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input:focus, textarea:focus {
+      color: black;
+    border: 3px solid black;
+  }
+  textarea:focus::placeholder{
+      color: black;
+  }
+  input:focus::placeholder{
+    color: black;
+}
+  input:hover {
+    border: 3px solid black;
+    color: black
+    
+  }
+  
+  @media only screen and (max-width: 900px) {
+ 
+    .Loginwrap{
+      width: 50%;
+    }
+   
+  }
+  @media only screen and (max-width: 480px) {
+    .LoginForm:nth-child(1){
+      flex: 50%;
+    }
+  
+    .LoginForm:nth-child(2){
+      flex: 50%;
+    }
+  
+    .LoginForm:nth-child(3){
+      flex: 100%;
+    }
+
+    .Loginwrap{
+      width: 90%;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 360px) {
+    .LoginForm:nth-child(1){
+      flex: 50%;
+    }
+  
+    .LoginForm:nth-child(2){
+      flex: 50%;
+    }
+  
+    .LoginForm:nth-child(3){
+      flex: 100%;
+    }
+  }

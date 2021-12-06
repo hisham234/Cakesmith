@@ -1,0 +1,104 @@
+
+.checkOutMain{
+    margin-top: 3rem;
+    min-height: 75%;
+}
+
+#cartImage{
+    max-width: 8rem;
+}
+
+.checkoutPrice{
+text-align: center;
+margin-left: 0%;
+margin-top: 5%;
+font-size: x-large;
+font-weight: bold;
+background-color: #F3F3F3;
+}
+
+#cartDetails{
+    width: 70%;
+    padding: 3% 0% 0% 2%;
+}
+
+.checkoutPrice button{
+    width: 80%;
+}
+
+.checkOutItems{
+    padding: 0% 5% 5% 3%
+}
+
+.checkOutItems button{
+    width: 30%;
+    float: right;
+}
+
+.checkOutItems img{
+    width: 100%;
+}
+
+.checkOutMain button{
+    line-height: 10px;
+    height: 8%;
+    color: #fff;
+    font-size: 15px;
+    background: #eebf00;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 576px) { 
+
+   .checkOutItems{
+    padding: 2%;
+    width: 100%;
+   }
+
+   #cartDetails select{
+       width: 20%;
+      padding: 1%
+   }
+
+   .checkOutItems button{
+    font-size: 10;
+    height: 0.5rem;
+    line-height: 2px;
+   }
+   #cartImage{
+       max-width: 30%;
+   }
+   .checkoutPrice{
+       background-color: #F3F3F3;
+       border-radius: 0%;
+       height: 100%;
+       position: relative;
+       margin-bottom: 0px;
+       margin-top: auto;
+   }
+   #cardBodyCart{
+       padding:0;
+       font-size: 10;
+       margin-top: 0;
+   }
+   #CheckOutPriceUl{
+       display: flex;
+       font-size: 15;
+       font-weight: bold;
+   }
+   #CheckOutPriceUl li{
+    width: 50%;
+}
+#CheckOutPriceUl button{
+    width: 50%;
+    margin-left: 50%;
+    font-size: 10;
+    line-height: 2px;
+}
+.checkOutMain{
+    min-height: 85%;
+}
+  }

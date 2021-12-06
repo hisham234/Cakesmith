@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+.RegisterBody{
+    position: relative;
+    display: table;
+    height: auto;
+    min-height: 85%;
+    padding-top: 20px;
+    display: grid;
+    align-items: center;
+    margin-top: 1rem;
+    font-family: "Poppins", sans-serif;
+    padding-top: 90px;
+    padding-bottom: 80px;
+}
+.Registerwrap {
+    filter: blur(0px);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bg-image-Login{
+    position:absolute; top:0px; right:0px; bottom:0px; left:0px;
+    background-image: url(../images/cupcake-day.jpg);
+    background-size: cover;
+    background-position: center center;
+    filter: blur(8px);
+ }
+
+.RegisterForm {
+    padding: 40px 15% 30px 15%;
+   
+  }
+  
+  .RegisterForm:nth-child(1){
+    flex: 30%;
+
+  }
+  
+  .RegisterForm:nth-child(2){
+    flex: 45%;
+  }
+  
+  .RegisterForm:nth-child(3){
+    flex: 25%;
+    padding: 0;
+  }
+  
+  .RegisterForm h1{
+   text-align:center;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .RegisterForm button{
+        line-height: 10px;
+        height: 8%;
+        color: #fff;
+        font-size: 15px;
+        background: red;
+        cursor: pointer;
+        width: 40%;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        margin-top: 4%;
+        margin-bottom: 10%;
+        margin-left: 32%;
+  }
+
+  .makeAcc a{
+      color: #f04506;
+  }
+
+  .makeAcc a:hover{
+      color:#eebf00 ;
+  }
+
+
+
+  
+  .detailImg{
+      padding-right: 20px;
+
+  }
+  .detailDiv{
+      margin-top: 20px;
+  }
+  .MainDetailDiv{
+      margin-top: 15%;
+  }
+
+  .RegisterForm input::placeholder {
+    color: #fff;
+  }
+
+  .RegisterForm input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 12px 20px;
+    background: transparent;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  input, select {
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input:focus, textarea:focus {
+      color: black;
+    border: 3px solid black;
+  }
+  textarea:focus::placeholder{
+      color: black;
+  }
+  input:focus::placeholder{
+    color: black;
+}
+  input:hover {
+    border: 3px solid black;
+    color: black
+    
+  }
+
+  @media only screen and (max-width: 900px) {
+  .Registerwrap{
+    width: 50%;
+  }
+  
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .RegisterForm:nth-child(1){
+      flex: 50%;
+    }
+  
+    .RegisterForm:nth-child(2){
+      flex: 50%;
+    }
+  
+    .RegisterForm:nth-child(3){
+      flex: 100%;
+    }
+    .Registerwrap{
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 360px) {
+    .RegisterForm:nth-child(1){
+      flex: 50%;
+    }
+  
+    .RegisterForm:nth-child(2){
+      flex: 50%;
+    }
+  
+    .RegisterForm:nth-child(3){
+      flex: 100%;
+    }
+  }

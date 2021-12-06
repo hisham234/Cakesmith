@@ -1,0 +1,136 @@
+.Shippingwrap {
+    color: black;
+    background: #F3F3F3;
+    border-radius: 25px;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ShippingForm {
+
+    margin: 40px 15% 30px 15%;
+  }
+
+  
+  .ShippingForm:nth-child(1){
+    flex: 30%;
+
+  }
+  
+  .ShippingForm:nth-child(2){
+    flex: 45%;
+  }
+  
+  .ShippingForm:nth-child(3){
+    flex: 25%;
+    padding: 0;
+  }
+  
+  .ShippingForm h1{
+   text-align:center;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .ShippingForm button{
+        line-height: 10px;
+        height: 7%;
+        color: black;
+        font-size: 15px;
+        background: #eebf00;
+        cursor: pointer;
+        width: 20%;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        margin: 3% 0% 10% 40%;
+  }
+
+  .ShippingForm input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    outline: none;
+    padding: 12px 20px;
+    background: transparent;
+    border-radius: 4px;
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  input, select {
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input:focus, textarea:focus {
+      color: black;
+    border: 3px solid black;
+  }
+  textarea:focus::placeholder{
+      color: black;
+  }
+  input:focus::placeholder{
+    color: black;
+}
+  input:hover {
+    border: 3px solid black;
+    color: black
+    
+  }
+
+
+  @media only screen and (max-width: 900px) {
+ 
+    .Shippingwrap{
+      width: 50%;
+    }
+
+    .ShippingForm button{
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    .checkout-steps{
+        width: 100%;
+    }
+   
+  }
+  @media only screen and (max-width: 480px) {
+    .ShippingForm:nth-child(1){
+      flex: 50%;
+    }
+  
+    .ShippingForm:nth-child(2){
+      flex: 50%;
+    }
+  
+    .ShippingForm:nth-child(3){
+      flex: 100%;
+    }
+
+    .Shippingwrap{
+      width: 90%;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 360px) {
+    .ShippingForm:nth-child(1){
+      flex: 50%;
+    }
+  
+    .ShippingForm:nth-child(2){
+      flex: 50%;
+    }
+  
+    .ShippingForm:nth-child(3){
+      flex: 100%;
+    }
+  }

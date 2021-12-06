@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+.contactBody{
+    position: relative;
+    display: table;
+    height: auto;
+    min-height: 85%;
+    padding-top: 20px;
+    display: grid;
+    margin-top: 1rem;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.contact-wrap {
+    filter: blur(0px);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bg-image-Contact{
+    position:absolute; top:0px; right:0px; bottom:0px; left:0px;
+    background-image: url(../images/cupcake-day.jpg);
+    background-size: cover;
+    background-position: center center;
+    filter: blur(8px);
+ }
+
+.contact-form, .contactDetails {
+    padding: 40px 30px;
+  }
+  
+  .contact-form:nth-child(1), .contactDetails:nth-child(1) {
+    flex: 30%;
+
+  }
+  
+  .contact-form:nth-child(2), .contactDetails:nth-child(2) {
+    flex: 45%;
+  }
+  
+  .contact-form:nth-child(3), .contactDetails:nth-child(3) {
+    flex: 25%;
+    padding: 0;
+  }
+  
+  .contact-form h1, .contactDetails h1 {
+      text-align: center;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form h2, .contactDetails h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  
+  .contact-form h2 i, .contactDetails h2 i {
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    color: white;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  .contact-form p, .contactDetails p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form ul, .contactDetails ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-form ul li, .contactDetails ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  
+  .detailImg{
+      padding-right: 20px;
+
+  }
+  .detailDiv{
+      margin-top: 20px;
+  }
+  .MainDetailDiv{
+      margin-top: 15%;
+  }
+  .contact-form  ul li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 50px;
+  }
+  
+  .contact-formul li a i, .contactDetails ul li a i {
+    font-size: 14px;
+    line-height: 30px;
+    color: white;
+  }
+  
+  .contact-form form, .contactDetails {
+    width: 100%;
+    height: auto;
+  }
+  
+  .contact-form-input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    outline: none;
+    padding: 12px 20px;
+    background: transparent;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .contact-form-input::placeholder {
+    color: #fff;
+  }
+  input[type=text], select {
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input[type=text]:focus, textarea:focus {
+      color: black;
+    border: 3px solid black;
+  }
+  textarea:focus::placeholder{
+      color: black;
+  }
+  input[type=text]:focus::placeholder{
+    color: black;
+}
+  input[type=submit]:hover {
+    border: 3px solid black;
+    color: black
+  }
+  
+  .contact-form-textarea {
+    width: 100%;
+    height: 140px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .contact-form-textarea::placeholder {
+    color: #fff;
+  }
+  
+  .contact-form-btn {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .contact-form:nth-child(1), .contactDetails:nth-child(1) {
+      flex: 50%;
+    }
+  
+    .contact-form:nth-child(2), .contactDetails:nth-child(2) {
+      flex: 50%;
+    }
+  
+    .contact-form:nth-child(3), .contactDetails:nth-child(3) {
+      flex: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 360px) {
+    .contact-form:nth-child(1), .contactDetails:nth-child(1) {
+      flex: 50%;
+    }
+  
+    .contact-form:nth-child(2), .contactDetails:nth-child(2) {
+      flex: 50%;
+    }
+  
+    .contact-form:nth-child(3), .contactDetails:nth-child(3) {
+      flex: 100%;
+    }
+  }
+
+  @media (max-width: 576px) { 
+    .contact-wrap{
+      width: 90%;
+    }
+   }
