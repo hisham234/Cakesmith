@@ -2,6 +2,8 @@ import http from 'http';
 import { Server } from 'socket.io';
 import express from 'express';
 import mongoose from 'mongoose';
+import express from 'express';
+import { createServer } from 'http';
 import dotenv from 'dotenv';
 import path from 'path';
 import productRouter from './routers/productRouter.js';
@@ -14,6 +16,8 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const server = createServer(app); 
+const socketio = new Server(server);
 
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/cakesmith');
 app.use('/api/uploads', uploadRouter);
