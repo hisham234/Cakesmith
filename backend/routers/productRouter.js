@@ -2,17 +2,19 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
 import Product from '../models/productModel.js';
-
-import { isAdmin, isAuth } from '../utils.js';
-
+import User from '../models/userModel.js';
+import { isAdmin, isAuth, isSellerOrAdmin } from '../utils.js';
 
 const productRouter = express.Router();
 
 productRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
+    const pageSize = 3;
+    const page = Number(req.query.pageNumber) || 1;
     const name = req.query.name || '';
     const category = req.query.category || '';
+    const seller = req.query.seller || '';
     const order = req.query.order || '';
     const min =
       req.query.min && Number(req.query.min) !== 0 ? Number(req.query.min) : 0;
@@ -22,7 +24,9 @@ productRouter.get(
       req.query.rating && Number(req.query.rating) !== 0
         ? Number(req.query.rating)
         : 0;
+
     const nameFilter = name ? { name: { $regex: name, $options: 'i' } } : {};
+    const sellerFilter = seller ? { seller } : {};
     const categoryFilter = category ? { category } : {};
     const priceFilter = min && max ? { price: { $gte: min, $lte: max } } : {};
     const ratingFilter = rating ? { rating: { $gte: rating } } : {};
@@ -30,16 +34,29 @@ productRouter.get(
       order === 'lowest'
         ? { price: 1 }
         : order === 'highest'
-          ? { price: -1 }
-          : order === 'toprated'
-            ? { rating: -1 }
-            : { _id: -1 };
-
-    const products = await Product.find({
-      ...nameFilter, ...categoryFilter, ...priceFilter,
+        ? { price: -1 }
+        : order === 'toprated'
+        ? { rating: -1 }
+        : { _id: -1 };
+    const count = await Product.count({
+      ...sellerFilter,
+      ...nameFilter,
+      ...categoryFilter,
+      ...priceFilter,
       ...ratingFilter,
-    }).sort(sortOrder);
-    res.send(products);
+    });
+    const products = await Product.find({
+      ...sellerFilter,
+      ...nameFilter,
+      ...categoryFilter,
+      ...priceFilter,
+      ...ratingFilter,
+    })
+      .populate('seller', 'seller.name seller.logo')
+      .sort(sortOrder)
+      .skip(pageSize * (page - 1))
+      .limit(pageSize);
+    res.send({ products, page, pages: Math.ceil(count / pageSize) });
   })
 );
 
@@ -55,15 +72,29 @@ productRouter.get(
   '/seed',
   expressAsyncHandler(async (req, res) => {
     // await Product.remove({});
-    const createdProducts = await Product.insertMany(data.products);
-    res.send({ createdProducts });
+    const seller = await User.findOne({ isSeller: true });
+    if (seller) {
+      const products = data.products.map((product) => ({
+        ...product,
+        seller: seller._id,
+      }));
+      const createdProducts = await Product.insertMany(products);
+      res.send({ createdProducts });
+    } else {
+      res
+        .status(500)
+        .send({ message: 'No seller found. first run /api/users/seed' });
+    }
   })
 );
 
 productRouter.get(
   '/:id',
   expressAsyncHandler(async (req, res) => {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id).populate(
+      'seller',
+      'seller.name seller.logo seller.rating seller.numReviews'
+    );
     if (product) {
       res.send(product);
     } else {
@@ -75,11 +106,12 @@ productRouter.get(
 productRouter.post(
   '/',
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
       name: 'sample name ' + Date.now(),
-      image: '/images/blackforest-cake.jpg',
+      seller: req.user._id,
+      image: '/images/p1.jpg',
       price: 0,
       category: 'sample category',
       brand: 'sample brand',
@@ -92,11 +124,10 @@ productRouter.post(
     res.send({ message: 'Product Created', product: createdProduct });
   })
 );
-
 productRouter.put(
   '/:id',
   isAuth,
-  isAdmin,
+  isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
     const product = await Product.findById(productId);
@@ -163,6 +194,5 @@ productRouter.post(
     }
   })
 );
-
 
 export default productRouter;

@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import mg from 'mailgun-js';
 
-
 export const generateToken = (user) => {
   return jwt.sign(
     {
@@ -9,6 +8,7 @@ export const generateToken = (user) => {
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
+      isSeller: user.isSeller,
     },
     process.env.JWT_SECRET || 'somethingsecret',
     {
@@ -37,7 +37,6 @@ export const isAuth = (req, res, next) => {
     res.status(401).send({ message: 'No Token' });
   }
 };
-
 export const isAdmin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next();
@@ -45,11 +44,25 @@ export const isAdmin = (req, res, next) => {
     res.status(401).send({ message: 'Invalid Admin Token' });
   }
 };
+export const isSeller = (req, res, next) => {
+  if (req.user && req.user.isSeller) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Invalid Seller Token' });
+  }
+};
+export const isSellerOrAdmin = (req, res, next) => {
+  if (req.user && (req.user.isSeller || req.user.isAdmin)) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Invalid Admin/Seller Token' });
+  }
+};
 
 export const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMAIN,
+    domain: process.env.MAILGUN_DOMIAN,
   });
 
 export const payOrderEmailTemplate = (order) => {
@@ -67,16 +80,16 @@ export const payOrderEmailTemplate = (order) => {
   </thead>
   <tbody>
   ${order.orderItems
-      .map(
-        (item) => `
+    .map(
+      (item) => `
     <tr>
     <td>${item.name}</td>
     <td align="center">${item.qty}</td>
     <td align="right"> $${item.price.toFixed(2)}</td>
     </tr>
   `
-      )
-      .join('\n')}
+    )
+    .join('\n')}
   </tbody>
   <tfoot>
   <tr>
