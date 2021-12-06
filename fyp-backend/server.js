@@ -1,4 +1,4 @@
-import http from 'http';
+//import http from 'http';
 import { Server } from 'socket.io';
 import express from 'express';
 import mongoose from 'mongoose';
@@ -46,8 +46,7 @@ app.get('*', (req, res) =>
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
-port: process.env.PORT || 5000
-
+const Port =  process.env.PORT || '5000' 
 
 const httpServer = http.Server(app);
 const io = new Server(httpServer, { cors: { origin: '*' } });
