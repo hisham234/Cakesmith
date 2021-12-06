@@ -18,7 +18,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd fyp-frontend && npm install && npm install jquery && npm run build",
-    "start": "nodemon --watch fyp-backend --exec node --experimental-modules fyp-backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "author": "",
   "license": "ISC",
