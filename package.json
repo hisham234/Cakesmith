@@ -17,7 +17,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
+    "build": "cd fyp-frontend && npm install && npm run build",
     "start": "nodemon --watch fyp-backend --exec node --experimental-modules fyp-backend/server.js"
   },
   "author": "",
