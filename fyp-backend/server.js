@@ -46,7 +46,7 @@ app.get('*', (req, res) =>
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
-const port = process.env.PORT || 5000;
+
 
 
 const httpServer = http.Server(app);
