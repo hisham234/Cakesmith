@@ -1,3 +1,3 @@
-web: node --experimental-modules fyp-backend/server.js
+web: node fyp-backend/server.js
 
 
