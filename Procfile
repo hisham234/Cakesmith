@@ -1,3 +1,3 @@
-web: node backend/server.js
+web: node --experimental node backend/server.js
 
 
