@@ -25,32 +25,9 @@ import DashboardScreen from './components/DashboardScreen';
 import SupportScreen from './components/SupportScreen';
 import ChatBox from './components/ChatBox';
 import React from 'react';
-import {WebView} from 'react-native-webview';
-import {View,BackHandler,Platform,} from 'react-native';
-
-
 
 require('slick-carousel');
 
-onAndroidBackPress = () => {
-  if (this.webView.canGoBack && this.webView.ref) {
-    this.webView.ref.goBack();
-    return true;
-  }
-  return false;
-}
-
-componentWillMount= () => {
-  if (Platform.OS === 'android') {
-    BackHandler.addEventListener('hardwareBackPress', this.onAndroidBackPress);
-  }
-}
-
-componentWillUnmount= () => {
-  if (Platform.OS === 'android') {
-    BackHandler.removeEventListener('hardwareBackPress');
-  }
-}
 
 function App() {
   return <div className="App">
@@ -116,19 +93,6 @@ function App() {
       component={SearchScreen}
       exact
     ></Route>
-
-<WebView
-          automaticallyAdjustContentInsets={false}
-          source={{uri: 'https://cakesmith.herokuapp.com/'}}
-          javaScriptEnabled={true}
-          domStorageEnabled={true}
-          startInLoadingState={true}
-          style={{marginTop: 25}}
-        />
-
-
-
-
   </div>
 }
 
