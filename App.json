@@ -11,9 +11,9 @@
       ],
       "version": "1.0.0",
       "orientation": "portrait",
-      "icon": "./public/Logo.png",
+      "icon": "fyp-frontend/public/App Logo.png",
       "splash": {
-        "image": "./public/Logo.png",
+        "image": "fyp-frontend/public/Splash.png",
         "resizeMode": "contain",
         "backgroundColor": "#ffffff"
       },
